@@ -17,8 +17,11 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (sideMenuRef.current && !sideMenuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sideMenuRef.current &&
+        !sideMenuRef.current.contains(event.target as Node | null)
+      ) {
         setMenuOpen(false);
       }
     };

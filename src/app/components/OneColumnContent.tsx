@@ -16,7 +16,7 @@ const OneColumnContent = () => {
           Get Access to ATD Intensive
         </div>
         <div className="text-lg py-2 text-white">
-          If you've registered for ATD Intensive, you can access the virtual
+          If you&#39;ve registered for ATD Intensive, you can access the virtual
           platform to join sessions opening on August 15 at 10:50 a.m. ET. Are
           you looking for slides or resources? Head over to the resource hub to
           find everything you need after logging into your ATD account.
