@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./NavBar.module.css";
 import Image from "next/image";
 import banner_bg from "../../public/hero_banner_bg.png";
 import banner_logo from "../../public/hero_banner_logo.png";
