@@ -1,18 +1,27 @@
+/* Header styles */
 .header {
   background-color: #111921;
-  padding-left: 1.3rem;
-  padding-right: 1.3rem;
+  padding: 0 1.3rem;
   width: 100%;
   max-height: 85px;
   display: flex;
 }
 
-.logo {
+/* Logo styles */
+.logo,
+.logoH {
   display: flex;
   align-items: center;
   min-height: 85px;
 }
 
+.logoH {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Link styles */
 .links {
   min-height: 85px;
   display: flex;
@@ -24,29 +33,44 @@
   gap: 1.8rem;
 }
 
-.link {
-  cursor: pointer;
-  padding: 1rem 1.2rem 1rem 1rem;
-  border: solid;
-  border-width: 1px;
-  border-color: transparent;
+.linksH {
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-weight: 650;
+  font-size: 1.1rem;
 }
 
+.link,
 .linkSponsor {
   cursor: pointer;
   padding: 1rem 1.2rem 1rem 1rem;
-  border: solid;
-  border-width: 1px;
-  border-color: transparent;
+  border: 1px solid transparent;
+}
+
+.linkH {
+  padding: 1rem;
+}
+
+.linkNameH {
+  transform: translateX(30%);
+  color: #9e9e9e;
+}
+
+.linkSponsorH {
+  transform: translateX(25%);
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid transparent;
 }
 
 .link:hover {
   background: rgba(255, 255, 255, 0.02);
-  border: solid;
-  border-width: 1px;
   border-color: aliceblue;
 }
 
+/* Link group styles */
 .linkGroup {
   position: absolute;
   left: 50%;
@@ -55,6 +79,11 @@
   gap: 20px;
 }
 
+.linkGroupH {
+  margin-top: 35%;
+}
+
+/* Dropdown styles */
 .linkDropdown {
   position: absolute;
   left: -17px;
@@ -67,7 +96,7 @@
 
 .link:hover .linkDropdown,
 .linkDropdown:hover {
-  display: block; /* Keep dropdown visible when hovering over dropdown or button */
+  display: block;
 }
 
 .dropdownContent {
@@ -75,9 +104,7 @@
   font-weight: 200;
   padding: 1rem;
   text-align: left;
-  border: solid;
-  border-width: 1px;
-  border-color: white;
+  border: 1px solid white;
 }
 
 .linkContainer {
@@ -88,41 +115,61 @@
   padding: 0.3rem;
 }
 
-.subLink:hover {
+/* Hover effects */
+.subLink:hover,
+.linkSponsorH:hover,
+.linkSponsor:hover,
+.linkName:hover {
   color: yellow;
 }
 
-.registerButton {
+/* Register button styles */
+.registerButton,
+.registerButtonH {
   font-weight: 600;
   font-size: 1.1rem;
   position: absolute;
   align-self: center;
-  left: 90%;
-  transform: translateX(-50%);
-  display: flex;
   background-color: #01ff8c;
-  padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 0.5rem;
 }
 
+.registerButton {
+  left: 93%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+}
+
+.registerButtonH {
+  color: #111921;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 4rem;
+  margin-top: 1rem;
+}
+
+.registerButtonH:hover,
+.registerButton:hover {
+  background-color: white;
+}
+
+/* Hamburger menu styles */
 .hamburgerMenu {
   display: none;
 }
 
-.registerButton:hover {
-  background-color: white;
-}
+/* Side menu styles */
 .sideMenu {
   display: none;
 }
 
+/* Media query for mobile devices */
 @media screen and (max-width: 700px) {
-  .linkGroup {
-    display: none;
-  }
+  .linkGroup,
   .registerButton {
     display: none;
   }
+
   .hamburgerMenu {
     cursor: pointer;
     display: block;
@@ -133,6 +180,7 @@
     height: 30px;
     transform: translateX(-50%);
   }
+
   .sideMenu {
     position: fixed;
     top: 0;
@@ -143,24 +191,36 @@
     color: white;
     transition: left 0.3s ease;
     z-index: 1000;
+    display: block;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .sideMenu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sideMenuContent {
+    min-height: 80%;
+    padding: 20px;
+    padding-bottom: 5rem;
+    padding-top: 0;
   }
 
   .showMenu {
     left: 0;
   }
-  .sideMenu {
-    display: block;
-  }
 
   .sideMenu ul {
     list-style: none;
-    padding: 20px;
   }
 
-  .sideMenu li {
-    padding: 15px 0;
-    border-bottom: 1px solid white;
+  .sideMenu li,
+  .linkSponsorH {
+    padding: 3px;
   }
+
   .overlay {
     position: fixed;
     top: 0;
@@ -168,5 +228,6 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
 }

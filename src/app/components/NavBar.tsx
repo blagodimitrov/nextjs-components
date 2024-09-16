@@ -125,13 +125,89 @@ const NavBar = () => {
         )}
         <div
           ref={sideMenuRef as React.RefObject<HTMLDivElement>}
-          className={`${styles.sideMenu} ${isMenuOpen ? styles.showMenu : ""}`}
+          className={`${styles.sideMenu} ${styles.sideMenuContent} ${
+            isMenuOpen ? styles.showMenu : ""
+          }`}
         >
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
+          <div className={styles.logoH}>
+            <Link href="/">
+              <Image src={logo} alt="ATD Logo" width={60} height={60} />
+            </Link>
+          </div>
+          <div className={styles.linkGroupH}>
+            <ul className={styles.linksH}>
+              <li className={styles.linkH}>
+                <div className={styles.linkContainerH}>
+                  <div className={styles.linkNameH}>About</div>
+                  <div className={styles.linkDropdownH}>
+                    <div className={styles.dropdownContentH}>
+                      <ul>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            What is ATD Intensive?
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Virtual Platform
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Resource Hub
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            ATD Membership
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Convince Your Boss
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className={styles.linkH}>
+                <div className={styles.linkContainerH}>
+                  <div className={styles.linkNameH}>Program</div>
+                  <div className={styles.linkDropdownH}>
+                    <div className={styles.dropdownContentH}>
+                      <ul>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Co-Creators
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Agenda
+                          </Link>
+                        </li>
+                        <li className={styles.subLink}>
+                          <Link href="https://atdintensive.td.org/about">
+                            Speakers
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className={styles.linkSponsorH}>
+                <div>
+                  <div>Sponsor</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <Link className={styles.registerButtonH} href={"/"}>
+            Register
+          </Link>
         </div>
       </div>
     </>
